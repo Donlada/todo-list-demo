@@ -1,33 +1,64 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.container {
+  width: 100%;
+  padding: 1em;
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.todo-container {
+  display: grid;
+  flex-direction: row;
+  grid-template-columns: 1fr 1fr 1fr;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.todo-card {
+  padding: 0.5em 0.5em 1.5em 0.5em;
+  display: flex;
+  flex-flow: column nowrap;
+  border: 1px #888 solid;
+  border-radius: 1em;
+}
+
+.dialog-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.dialog {
+  position: fixed;
+  transform: translateX(-50%) translateY(-50%);
+  top: 50%;
+  left: 50%;
+  min-width: 300px;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  background: white;
+  padding: 0.5em 0.5em 0.5em 0.5em;
+  border-radius: 1em;
+}
+
+.bottom-dialog {
+  padding: 1em;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+}
+
+.todo-list {
+  padding: 0 1em;
+  border-width: 0 1px 0 1px;
+  border-color: #888;
+  border-style: solid;
+  border-collapse: collapse;
+}
+
+.dialog-form {
+  display: grid;
+  grid-template-columns: 33% 67%;
 }
